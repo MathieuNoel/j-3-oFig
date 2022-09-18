@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/cart.css">
+        <title>oFig</title>
+    </head>
+    <body>
+        <div id="container">
+
+            <header class="header hide-when-printing">
+                <h1 class="logo">
+                    oFig <span class="logo__desc">Figurines et statuettes</span>
+                </h1>
+                <h2 class="selection">
+                    Votre panier 2 produits
+                </h2>
+    
+            </header>
+            <main>
+
+                <form>
+
+                    <section class="cart-section">
+
+                        <h2 class="cart-section__title">Votre panier</h2>
+                        <table class="cart-products">
+                            <thead class="cart-products__head">
+                            <tr class="cart-products__head-line">
+                                <th class="cart-products__head-item">Figurine</th>
+                                <th class="cart-products__head-item">Prix unitaire</th>
+                                <th class="cart-products__head-item">Quantité</th>
+                            </tr>
+                            </thead>
+                            <tbody class="cart-products__body">
+                            <tr class="cart-products__body-line">
+                                <td class="cart-products__body-item">Cloud Strife</td>
+                                <td class="cart-products__body-item">59 €</td>
+                                <td class="cart-products__body-item">
+                                <input type="number" class="cart-products__qty" min="0" name="qty[0]" value="1" />
+                                <a href="#" class="cart-products__remove-product" >supprimer</a>
+                                </td>
+                            </tr>
+                            <tr class="cart-products__body-line">
+                                <td class="cart-products__body-item">Tifa Lockhart</td>
+                                <td class="cart-products__body-item">69 €</td>
+                                <td class="cart-products__body-item">
+                                <input type="number" class="cart-products__qty" min="0" name="qty[1]" value="1" />
+                                <a href="#" class="cart-products__remove-product" >supprimer</a>
+                                </td>
+                            </tr>
+                            <tr class="cart-products__body-line">
+                                <td class="cart-products__body-item">Barret Wallace</td>
+                                <td class="cart-products__body-item">69 €</td>
+                                <td class="cart-products__body-item">
+                                <input type="number" class="cart-products__qty" min="0" name="qty[2]" value="1" />
+                                <a href="#" class="cart-products__remove-product" >supprimer</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tfoot class="cart-products__foot">
+                            <tr class="cart-products__foot-line">
+                                <td class="cart-products__foot-item" colspan="2">Total de la commande :</td>
+                                <td class="cart-products__foot-item cart-products__foot-item--price">197 €</td>
+                            </tr>
+                            </tfoot>
+                        </table>
+
+                    </section>
+
+                    <!-- Option possible de séparation entre les sections -->
+                    <!-- <hr class="cart-divider"> -->
+
+                    <section class="cart-section">
+                        <h2 class="cart-section__title">
+                            Préférences de livraison
+                        </h2>
+
+                            <!-- Parent -->
+                            <div class="cart-delivery">
+
+                                <!-- Bloc de gauche -->
+                                <div class="cart-delivery__part">
+                                    <h3 class="cart-delivery__part-title">Où souhaitez-vous etre livré ?</h3>
+                                    <div>
+                                        <input type="radio" name="deliveryAddressChoice" id="deliveryAddressChoice1" value="current" checked>
+                                        <label for="deliveryAddressChoice1" class="form__radio-label">Mon adresse courante</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="deliveryAddressChoice" id="deliveryAddressChoice2" value="other">
+                                        <label for="deliveryAddressChoice2" class="form__radio-label">Autre adresse</label>
+                                    </div>
+
+                                    <h3 class="cart-delivery__part-title">Options</h3>
+
+                                    <div>
+                                        <input type="checkbox" name="deliveryOptions" id="deliveryOption1" value="1" checked>
+                                        <label for="deliveryOption1" class="form__checkbox-label">Suivi de livraison par sms (inclus)</label>
+                                    </div>
+
+                                    <div>
+                                        <input type="checkbox" name="deliveryOptions" id="deliveryOption2" value="2">
+                                        <label for="deliveryOption2" class="form__checkbox-label">Satisfait ou remboursé (+2  euros)</label>
+                                    </div>
+
+                                    <div>
+                                        <input type="checkbox" name="deliveryOptions" id="deliveryOption3" value="3">
+                                        <label for="deliveryOption3" class="form__checkbox-label">Garantie 2 ans (+10 euros)</label>
+                                    </div>
+                                </div>
+
+                                <!-- Bloc de droite -->
+                                <div class="cart-delivery__part">
+                                    <h3 class="cart-delivery__part-title">Adresse</h3>
+                                    
+                                    <div class="form-group">
+                                        <label for="deliveryAddress" class="form-group__label-input">Rue</label>
+                                        <input type="text" name="address" class="form-group__input" id="deliveryAddress">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="deliveryZip" class="form-group__label-input">Code postal</label>
+                                        <input type="text" name="zip" class="form-group__input" id="deliveryZip">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="deliveryCity" class="form-group__label-input">Ville</label>
+                                        <input type="text" name="city" id="deliveryCity" class="form-group__input">
+                                    </div>
+
+
+                                    <h3 class="cart-delivery__part-title">Informations complémentaires</h3>
+
+                                    <div class="form-group">
+                                        <label for="deliveryAdditionals" class="form-group__label-input">Interphone, batiment, etc.</label>
+                                        <textarea name="additionals" id="deliveryAdditionals" class="form-group__input"></textarea>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                    </section>
+
+                    <section class="cart-section">
+                        <div class="cart-total">
+                            <span class="cart-total__label">
+                                Montant total à régler
+                            </span>
+                            <span class="cart-total__price">
+                                197 €
+                            </span>
+                        </div>
+                    </section>
+
+                    <section class="cart-section">
+                        <div class="cart-actions hide-when-printing">
+                            <button class="button" type="button">
+                                Continuer vos achats
+                            </button>
+                            <button class="button button--red" type="submit">
+                                Valider et payer
+                            </button>
+                        </div>
+                    </section>
+
+                </form>
+
+            </main>
+            <footer class="selection selection--small">
+                oFig - toutes les images sont sous copyright SquareEnix
+            </footer>
+
+            
+        </div>
+        <div class="sticky__sales hide-when-printing">soldes</div>
+        <!-- <div class="rotate">text à tourner</div> -->
+    </body>
+</html>
