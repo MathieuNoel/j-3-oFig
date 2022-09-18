@@ -1,87 +1,174 @@
 body {
-
-    text-align: center;
-    font-family: Raleway;
-    background-color: #fff;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    /* on désactive le scroll au niveau du body */
+    overflow: hidden;
 }
 
-header {
+#container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.logo {
     background-color: #c80000;
-    font-size: 4ch;
-    text-align: left;
+    font-size: 2em;
+    padding: 0.5em;
+    font-weight: 700;
 }
 
-h1 {
-    padding: 15px 0 15px 15px;
-    color: #fff;
-    font-weight: bold;
+.logo__desc {
+    /* 
+    rem prend pour référence de calcul la taille de l'élément racine html
+    si on n'a pas mis de font-size à cet élément, c'est la taille par défaut du navigateur qui s'applique (16px)
+    */
+    font-size: 0.8rem;
 }
 
-strong {
-    font-size: 0.6ch;
-}
-
-header .texte {
+.selection {
     background-color: #666;
     text-align: center;
-    font-size: 0.6ch;
-    color: #fff;
-    padding: 10px 0 5px 0;
+    padding: 0.5em 0;
+
 }
 
-em {
+.selection__current {
+    font-size: 1.2em;
     font-style: italic;
-    font-size: 1.8ch;
 }
+
+.selection--small {
+    font-size: 0.9em;
+}
+
 main {
-    flex-direction: row;
-    display: inline-flex;
+    color: black;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
+    flex-grow: 1;
+    overflow: auto;
 }
 
-.article {
+.item {
+    /* 
+    Il faut impérativement donner une position autre que static à l'élément contenant
+    */
+    position: relative;
+    width: 250px;
+    margin: 0.3em;
     border: 1px solid #ccc;
-    margin: 15px;
+    padding: 0.3em;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s;
 }
-aside {
+
+.item:hover {
+    box-shadow: 3px 3px 5px #ccc;
+}
+
+.item__image {
+    max-width: 100%;
+}
+
+.item__content {
+    padding: 0.3em;
+}
+
+.item__content__category {
     text-transform: uppercase;
-    color: #666;
-    border-bottom: 1px solid #666;
-    text-align: left;
-    padding: 0.5em 0 0.5em 0.5em;
-    margin: 0 1em;
-    
+    color: #ccc;
+    border-bottom: 1px solid #ccc;
+    font-size: 0.7em;
+    font-weight: 700;
+    padding: 0.3em;
+    margin: 0.3em 0;
 }
-h2 {
-    font-weight: bolder;
-    font-size: 2em;
-    padding: 0.5em 0 0.5em 0.5em;
-    text-align: left;
+
+.item__content__name {
+    font-weight: 700;
+    font-size: 1.3em;
+    margin: 0.3em 0;
 }
-.texte {
-    text-align: left;
-    padding: 0 0 1.5em 1em;
-}
-.prix {
-    background-color: #c80000;
-    text-align: left;
-    padding: 1.5em;
-    color: #fff;
-}
-.span {
-    padding-left: 13em;
-}
-.span1 {
-    text-decoration: line-through;
+
+.item__content__desc {
     font-size: 0.8em;
 }
-footer p {
-    background-color: #666;
+
+.item__buy {
+    display: flex;
+    justify-content: space-between;
     color: #fff;
-    padding: 1em 0;
+    padding: 1em;
+    background-color: #c80000;
+    margin-top: 1em;
+    transition: 0.5s;
 }
-img {
-    
+
+.item__buy:hover {
+    background-color: #333;
 }
+
+.item__buy__cart {
+    font-size: 0.8em;
+}
+
+.item__buy__price {
+    font-weight: 700;
+}
+
+.item__buy__price--old {
+    /* on raye le prix */
+    text-decoration: line-through;
+    /* on enlève le gras */
+    font-weight: normal;
+    /* on réduit un peu le texte */
+    font-size: 0.8em;
+}
+
+.item__sales {
+    width: 70px;
+    height: 70px;
+    background-color: #666;
+    border: 3px solid #ccc;
+    color: white;
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: 700;
+    line-height: 60px;
+    /* avec le border-radius appliqué sur un carré, on peut obtenir un cercle parfait avec une valeur à 50% */
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.sticky__sales {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    background-color: #c80000;
+    width: 25px;
+    padding: 15px 5px;
+    font-size: 0.8em;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    /* on force l'affichage en vertical */
+    word-break: break-all;
+    /* on décompose le border-radius pour arrondir uniquement les coins de droite */
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+/* 
+exemple d'opération géométrique sur un élément
+.rotate {
+    color: black;
+    font-size: 2em;
+    transform: rotateZ(90deg);
+    text-align: center; 
+}
+*/
